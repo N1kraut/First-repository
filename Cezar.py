@@ -16,7 +16,7 @@ def cezar(text, key):
 
 def cezar_de(text, key):
     """
-    шифрует по цезарю
+    дешифрует по цезарю
 
     >>> cezar_de('qlnlwd', 3)
     'nikita'
@@ -25,6 +25,17 @@ def cezar_de(text, key):
     """
     return ''.join(list(map(lambda i: i.replace(i, alp[alp.find(i)-key] ), text)))
 
+def analys(text):
+    """
+    Анализирует кол-во букв в процентах в слове
+
+    """
+
+
+    return {c:text.count(c) for c in set(text)}
+
+
 if __name__ == "__main__":
     import doctest
     doctest.testmod(verbose=True)
+print(analys('nikita'))
